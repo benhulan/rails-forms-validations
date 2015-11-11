@@ -1,0 +1,37 @@
+<div class='pet-form'>
+  <h4>Add a pet</h4>
+  <%= form_for [@owner, @pet] do |f| %>
+
+  <% if @pet.errors.any? %>
+  <div id="error_explanation">
+    <h2 class="error-warning">
+      <%= pluralize(@pet.errors.count, "error") %> prohibited
+      this pet from being saved:
+    </h2>
+    <ul>
+      <% @pet.errors.full_messages.each do |msg| %>
+      <li class="error-message"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p class="pet-form-title">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :species, 'Cat' %>
+    <%= f.radio_button :species, 'Cat' %>
+    <%= f.label :species, 'Dog' %>
+    <%= f.radio_button :species, 'Dog' %>
+      <%= f.label :species, 'Parakeet' %>
+    <%= f.radio_button :species, 'Parakeet' %>
+  </p>
+
+
+  <p class="pet-form-submit">
+    <%= f.submit %>
+  </p>
+
+  <% end %>
+
+</div>
