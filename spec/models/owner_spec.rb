@@ -13,6 +13,10 @@ RSpec.describe Owner, type: :model do
       @owner.should be_an_instance_of Owner
     end
 
+    it "knows its own name" do
+      @owner.name.should == "Barack"
+    end
+
   end
 
   # pending "add some examples to (or delete) #{__FILE__}"

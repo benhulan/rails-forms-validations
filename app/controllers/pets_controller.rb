@@ -22,6 +22,6 @@ end
 
 private
 def pet_params
-   params.require(:pet).permit(:name)
+   params.require(:pet).permit(:name, :species)
 end
 end
